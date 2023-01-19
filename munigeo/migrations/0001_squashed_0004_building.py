@@ -119,7 +119,7 @@ class Migration(migrations.Migration):
                 ('name_sv', models.CharField(db_index=True, max_length=100, null=True)),
                 ('name_en', models.CharField(db_index=True, max_length=100, null=True)),
                 ('municipality', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='munigeo.Municipality')),
-                ('modified_at', models.DateTimeField(auto_now=True, default=datetime.datetime(1970, 1, 1, 2, 0, tzinfo=datetime.timezone.utc), help_text='Time when the information was last changed')),
+                ('modified_at', models.DateTimeField(auto_now=True, help_text='Time when the information was last changed')),
             ],
         ),
         migrations.AlterUniqueTogether(
@@ -167,7 +167,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='address',
             name='modified_at',
-            field=models.DateTimeField(auto_now=True, default=datetime.datetime(1970, 1, 1, 2, 0, tzinfo=datetime.timezone.utc), help_text='Time when the information was last changed'),
+            field=models.DateTimeField(auto_now=True, help_text='Time when the information was last changed'),
             preserve_default=False,
         ),
         migrations.AlterUniqueTogether(
